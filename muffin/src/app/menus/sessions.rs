@@ -245,9 +245,6 @@ impl<'a> StatefulWidget for &mut SessionsMenu<'a> {
                         Some(Line::from(if session.active {
                             // Color ACTIVE (attached & current terminal) green
                             "   active".green()
-                        } else if session.attached {
-                            // Color ATTACHED (attached in diff terminal) dark gray
-                            "  attached".dark_gray()
                         } else {
                             "\n".into()
                         }))

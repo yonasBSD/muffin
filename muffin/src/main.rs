@@ -68,7 +68,7 @@ async fn main() -> () {
                         std::process::exit(1);
                     })
             } else {
-                std::fs::create_dir_all(format!("{dot_config_muffin}")).unwrap();
+                std::fs::create_dir_all(&dot_config_muffin).unwrap();
                 std::fs::write(
                     format!("{dot_config_muffin}/presets.kdl"),
                     EXAMPLE_PRESET_CONTENT,
@@ -142,7 +142,7 @@ OPTIONS:
     );
 }
 
-const EXAMPLE_PRESET_CONTENT: &'static str = r#"
+const EXAMPLE_PRESET_CONTENT: &str = r#"
 session name="foo" cwd="~" {
   window {
     split direction="h" {

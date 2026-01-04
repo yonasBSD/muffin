@@ -121,7 +121,7 @@ impl App {
 
     /// runs the application's main loop until the user quits
     pub async fn run(&mut self, terminal: &mut DefaultTerminal) -> Result<(), String> {
-        let active_index = self.state.sessions.iter().position(|s| s.attached);
+        let active_index = self.state.sessions.iter().position(|s| s.active);
         self.state.selected_session = active_index;
         self.state.selected_preset = if self.state.presets.is_empty() {
             None
